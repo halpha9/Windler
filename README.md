@@ -21,4 +21,8 @@ First of many React projects, after learning HTML, CSS, Javascript and SASS this
 •	react-tinder-card
 
 
-More features will be added to the project in the near future, for now enjoy viewing via the link above
+More features will be added to the project in the near future, for now enjoy viewing via the link above.
+
+<img width="1433" alt="tinder" src="https://user-images.githubusercontent.com/74524893/159176680-6014a0d8-9a0b-4fa3-b12c-0ebd020fed22.png">
+
+
