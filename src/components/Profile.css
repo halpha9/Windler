@@ -1,0 +1,120 @@
+.profile{
+    flex-direction: column;
+    align-items: center;
+    display:flex;
+
+    padding:20px;
+
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color:#a7a7a7;
+}
+.profile__image {
+    box-shadow:0px 18px 53px 0px rgba(0,0,0,0.2);
+}
+
+.profile__info {
+    padding:30px 0 10px;
+    font-size: 20px;
+    text-align: center;
+    color: #616161;
+}
+
+
+.profile__buttonsBottom {
+    display: flex;
+    width:100%;
+    justify-content: center;
+    margin-top: -60px;
+
+}
+
+.profile__buttonsTop{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile__button {
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+.profile__camera {
+    color:white;
+ 
+}
+
+
+.profile__button .MuiIconButton-root {
+
+    padding:1rem !important;
+    margin: 1rem 3rem 0.8rem;
+    box-shadow:0px 10px 53px 0px rgba(0,0,0,0.2) !important;
+}
+
+.profile__upgrades{
+    padding-top: 35px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile__aspects > p{
+    padding:15px;
+    font-size:15px;
+    text-align: center;
+}
+
+.profile__aspects > Button{
+    padding: 15px 30px 15px;
+    border-radius: 30px;
+    color: #fe3d71;
+    background-color: white;
+    box-shadow:0px 10px 53px 0px rgba(0,0,0,0.3) !important;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-weight: 400;
+    font-family: inherit;
+
+}
+
+.profile__bolt {
+    color:purple !important;
+}
+
+.profile__aspects {
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.profile__svg{
+position: absolute;
+bottom:40px;
+z-index: -100;
+
+}
+
+.profile__page{
+    position:relative;
+}
+
+.box {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+bottom:0;
+z-index: -100;
+background-color: #efefef;
+}
