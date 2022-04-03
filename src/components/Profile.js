@@ -1,6 +1,5 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
-import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import EditIcon from "@mui/icons-material/Edit";
@@ -8,38 +7,34 @@ import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import BoltIcon from "@mui/icons-material/Bolt";
 
 import "./Profile.css";
+import { selectUser } from "../features/userSlice";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-function Profile({ name, age, profilePic, job }) {
-  return (
-    <div class="profile">
-      <Avatar
-        sx={{ height: "90px", width: "90px" }}
-        className="profile__image"
-        alt={name}
-        src={profilePic}
-      />
-      <div class="profile__info">
-        <h2>
-          {name}, {age}
-        </h2>
-        <p>{job}</p>
-      </div>
-    </div>
-  );
-}
+
 
 function Profiles() {
+  const user = useSelector(selectUser);
   return (
-    
     <div class="profiles__page">
       <svg class = "profile__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#efefef" fill-opacity="1" d="M0,64L120,80C240,96,480,128,720,133.3C960,139,1200,117,1320,106.7L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
       <div class = "box"></div>
-      <Profile
-        name="Harry Alpha"
-        age="23"
-        profilePic="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg"
-        job="Front-End Developer at Tinder"
-      />
+      <div class="profile">
+        <Avatar
+          sx={{ height: "90px", width: "90px" }}
+          className="profile__image"
+          src={user.photoUrl}
+        >
+          {user.displayName[0]}
+        </Avatar>
+        
+        <div class="profile__info">
+          <h2>
+            {user.displayName}, 23
+          </h2>
+          <p>Front-end Developer Tinder</p>
+        </div>
+      </div>
       <div className="profile__buttons">
         <div className="profile__buttonsTop">
           <div class="profile__button">
@@ -50,9 +45,11 @@ function Profiles() {
           </div>
 
           <div class="profile__button">
+            <Link to = "edit">
             <IconButton className="profile__edit">
               <EditIcon fontSize="large" />
             </IconButton>
+            </Link>
             <label>Edit Profile</label>
           </div>
         </div>

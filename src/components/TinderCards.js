@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
 import "../components/TinderCards.css";
-import database from "../firebase";
+import { database } from "../firebase";
+
 
 function TinderCards() {
   const [people, setPeople] = useState([]);

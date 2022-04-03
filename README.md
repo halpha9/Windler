@@ -1,13 +1,10 @@
 # Windler
-A Tinder Clone Built using ReactJs which utlises Firebase as an online database pulling information and image links in order to display potential matches, as well as react router for page switching and material UI for icons throughout the site.
-
-
-
-## Background
-First of many React projects, after learning HTML, CSS, Javascript and SASS this porject was my first attempt at using react, with the help of youtube tutorials and Stack Overflow, managed to create a site to mimick tinder.
+A Tinder Clone Built using ReactJs which utlises Firebase as an online database pulling information and image links in order to display potential matches, as well as react router for page switching and material UI for icons throughout the site. Also a login page built using redux.
 
 
 ## Dependencies used:
+•	react-router-dom
+
 •	react-router-dom
 
 •	material-ui (really cool library for icons and other ui needs!)
