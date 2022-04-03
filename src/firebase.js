@@ -4,18 +4,16 @@ import "firebase/compat/firestore"
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDrJzDdCwBo3wWXCGAXEXjFF0kRgGirtZg",
-    authDomain: "windler-d5d4c.firebaseapp.com",
-    projectId: "windler-d5d4c",
-    storageBucket: "windler-d5d4c.appspot.com",
-    messagingSenderId: "619094137854",
-    appId: "1:619094137854:web:9e1e0871262cc6acdb3eaf",
-    measurementId: "G-XH7GXX9CMK"
-  };
+    apiKey: "AIzaSyCJ_RZMbSoMsrQFSPtAQQTdJL6KqUWcUmo",
+    authDomain: "tinder-b6c0a.firebaseapp.com",
+    projectId: "tinder-b6c0a",
+    storageBucket: "tinder-b6c0a.appspot.com",
+    messagingSenderId: "539826082108",
+    appId: "1:539826082108:web:46eab8eab46a31bc060e39"
+};
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
   const database = firebaseApp.firestore();
-
-  export default database;
-
+  const auth = firebase.auth();
   
+  export { database, auth };

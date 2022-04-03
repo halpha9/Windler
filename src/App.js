@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import './index.css';
 import "./App.css";
 import Header from "./components/Header";
@@ -7,25 +7,40 @@ import SwipeButtons from "./components/SwipeButtons";
 import Chats from "./components/Chats";
 import ChatScreen from "./components/ChatScreen";
 import Profile from "./components/Profile";
-import Loader from "./components/Loader";
+import Login from "./components/Login";
+import { auth } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { login, logout, selectUser } from "./features/userSlice";
+import { useSelector, useDispatch } from "react-redux";
+import Edit from "./components/Edit";
 
 function App() {
-  const [loading, setLoading] = useState (false);
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-        setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
-        }, 8000)
-  }, [])
+    auth.onAuthStateChanged(userAuth => {
+      if(userAuth){
+        dispatch(
+          login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoURL: userAuth.photoURL,
+        })
+        );
+      } else {
+        dispatch(logout());
+      }
+    })
+  }, []);
 
   return (
     <div className="App">
       {
-        loading ?
-        <Loader/>
-        :
+        (!user) ?
+        <Login/>
+        :(
       <Router>
         <Switch>
         <Route path="/chat/:person">
@@ -40,6 +55,10 @@ function App() {
             <Header backButton ="/"/>
             <Profile />
           </Route>
+          <Route path="/edit">
+            <Header backButton ="/menu"/>
+            <Edit />
+          </Route>
           <Route path="/">
           <Header />
             <TinderCards />
@@ -47,28 +66,9 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      }
+        )}
     </div>
   );
 }
 
 export default App;
-
-{
-  /* Loading screen tinder logo Colour fills */
-}
-{
-  /* Header */
-}
-{
-  /* Tinder Cards */
-}
-{
-  /* Buttons below tinder Cards */
-}
-{
-  /* Chats Screen */
-}
-{
-  /* Induvidual Chats Screen */
-}
